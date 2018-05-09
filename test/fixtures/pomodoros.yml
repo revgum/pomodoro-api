@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isPaused: false
+  isStarted: false
+  minutes: 
+  pausedElapsed: 
+  seconds: 
+  secondsElapsed: 
+  secondsRemaining: 
+  timer: 
+
+two:
+  isPaused: false
+  isStarted: false
+  minutes: 
+  pausedElapsed: 
+  seconds: 
+  secondsElapsed: 
+  secondsRemaining: 
+  timer: 

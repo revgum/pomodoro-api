@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seconds: 
+  description: MyString
+  pomodoro: one
+
+two:
+  seconds: 
+  description: MyString
+  pomodoro: two
