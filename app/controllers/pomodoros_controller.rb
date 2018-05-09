@@ -9,20 +9,20 @@ class PomodorosController < ApplicationController
 
   def update
     @pomodoro.update(pomodoro_params)
-    render json: @pomodoro
+    render json: @pomodoro.as_json(include: :pauses)
   end
 
   def destroy
     @pomodoro.destroy
-    render json: @pomodoro
+    render json: @pomodoro.as_json(include: :pauses)
   end
 
   def index
-    render json: Pomodoro.all
+    render json: Pomodoro.all.order('created_at DESC').as_json(include: :pauses)
   end
 
   def show
-    render json: @pomodoro
+    render json: @pomodoro.as_json(include: :pauses)
   end
 
   private
