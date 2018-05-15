@@ -13,6 +13,7 @@ class PomodorosController < ApplicationController
   end
 
   def destroy
+    @pomodoro.pauses.each {|p| p.destroy }
     @pomodoro.destroy
     render json: @pomodoro.as_json(include: :pauses)
   end
