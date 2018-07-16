@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_05_09_205911) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pauses", force: :cascade do |t|
     t.integer "seconds"
     t.string "description"
-    t.integer "pomodoro_id"
+    t.bigint "pomodoro_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pomodoro_id"], name: "index_pauses_on_pomodoro_id"
@@ -34,4 +37,5 @@ ActiveRecord::Schema.define(version: 2018_05_09_205911) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pauses", "pomodoros"
 end

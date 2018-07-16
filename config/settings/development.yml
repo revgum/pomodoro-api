@@ -1,0 +1,5 @@
+database:
+  name: development
+  username: postgres
+  password: 12341234
+  host: db

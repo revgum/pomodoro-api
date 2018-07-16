@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  db:
+    image: postgres:9.4
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - backend
+    environment:
+      POSTGRES_PASSWORD: 12341234
+      POSTGRES_DB: development
+
+  web:
+    build: .
+    networks:
+      - frontend
+      - backend
+    command: bundle exec puma
+    expose:
+      - 3000
+    volumes:
+      - .:/data
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  db-data:
